@@ -14,10 +14,17 @@ const state = {
 
 // === Render ===
 function renderBank(){
-    const $bank = bank.map((number) => {
+    const $bank = state.bank.map((number) => {
         const $number = document.createElement("span");
         $number.textContent = number;
+        return $number;
     })
+        const $output = document.querySelector("#numBank");
+        $output.replaceChildren(...$bank)
+}
+
+function render(){
+    renderBank();
 }
 
 // === Script ===
@@ -30,6 +37,6 @@ render();
         event.preventDefault();
         const $numberInput = document.querySelector("#number");
         addNumber($numberInput.value)
-        $numberInput = "";
+        $numberInput.value = "";
         render();
-    })
+    });
