@@ -14,9 +14,8 @@ const state = {
     const numToSort = state.bank.shift();
     if(numToSort % 2 === 0){
         state.even.push(numToSort);
-    else{
+    }else{
         state.odd.push(numToSort);
-    }
     }
  }
 
@@ -33,7 +32,23 @@ function renderBank(){
 }
 
 function $renderOdd(){
-    const $odd = state.bank.map((number)=>)
+    const $odd = state.odd.map((number)=>{
+        const $number = document.createElement("span");
+        $number.textContent = number;
+        return $number;
+    })
+    const $output = document.querySelector("#odds_num");
+    $output.replaceChildren(...$odd)
+}
+
+function $renderEven(){
+    const $even = state.even.map((number)=>{
+        const $number = document.createElement("span");
+        $number.textContent = number;
+        return $number;
+    })
+    const $output = document.querySelector("#evens_num");
+    $output.replaceChildren(...$even)
 }
 
 function render(){
