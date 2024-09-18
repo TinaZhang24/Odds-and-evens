@@ -9,7 +9,7 @@ const state = {
 };
 
  function addNumber(number){
-    bank.push(number);
+    state.bank.push(number);
  }
 
 // === Render ===
@@ -31,6 +31,5 @@ render();
         const $numberInput = document.querySelector("#number");
         addNumber($numberInput.value)
         $numberInput = "";
+        render();
     })
-
-render();
