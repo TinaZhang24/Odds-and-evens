@@ -25,15 +25,12 @@ function renderBank(){
 render();
 
 /** Adds a number to the bank according to user prompt*/
-function addNumber(){
     const $form = document.querySelector("form")
     $form.addEventListener("submit", (event)=>{
         event.preventDefault();
-
         const $numberInput = document.querySelector("#number");
         addNumber($numberInput.value)
         $numberInput = "";
     })
-}
 
 render();
