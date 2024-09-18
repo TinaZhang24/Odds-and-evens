@@ -85,7 +85,7 @@ render();
 /**  Sort All according to user react. */
     const $sortAll = document.querySelector("#sortAll");
     $sortAll.addEventListener("click",() => {
-        while(bank.length > 0){
+        while(state.bank.length > 0){
             sortNumber();
         }
         render();
