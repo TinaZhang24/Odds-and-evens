@@ -1,6 +1,7 @@
 // TODO: this file! :)
 
 // === State ===
+
 const state = {
     bank:[],
     odd:[],
@@ -10,6 +11,14 @@ const state = {
  function addNumber(number){
     bank.push(number);
  }
+
+// === Render ===
+function renderBank(){
+    const $bank = bank.map((number) => {
+        const $number = document.createElement("span");
+        $number.textContent = number;
+    })
+}
 
 // === Script ===
 
@@ -23,6 +32,7 @@ function addNumber(){
 
         const $numberInput = document.querySelector("#number");
         addNumber($numberInput.value)
+        $numberInput = "";
     })
 }
 
