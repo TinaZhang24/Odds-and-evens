@@ -31,7 +31,7 @@ function renderBank(){
         $output.replaceChildren(...$bank)
 }
 
-function $renderOdd(){
+function renderOdd(){
     const $odd = state.odd.map((number)=>{
         const $number = document.createElement("span");
         $number.textContent = number;
@@ -41,7 +41,7 @@ function $renderOdd(){
     $output.replaceChildren(...$odd)
 }
 
-function $renderEven(){
+function renderEven(){
     const $even = state.even.map((number)=>{
         const $number = document.createElement("span");
         $number.textContent = number;
@@ -85,7 +85,7 @@ render();
 /**  Sort All according to user react. */
     const $sortAll = document.querySelector("#sortAll");
     $sortAll.addEventListener("click",() => {
-        while(i = 0, i < state.bank.length, i++){
+        while(state.bank.length > 0){
             sortNumber();
         }
         render();
